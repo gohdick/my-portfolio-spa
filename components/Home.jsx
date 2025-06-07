@@ -57,9 +57,9 @@ export default function Home() {
   
   const techStack = [
     { name: 'PHP', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400' },
-    { name: 'Node.js [Fastify]', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' },
     { name: 'JavaScript', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' },
     { name: 'jQuery', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
+    { name: 'Node.js [Fastify]', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' },
     { name: 'React', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
     { name: 'Next.js', color: 'bg-gray-100 text-gray-800 dark:bg-gray-900/50 dark:text-gray-300' },
     { name: 'TypeScript', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
