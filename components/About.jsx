@@ -41,40 +41,40 @@ export default function About() {
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="font-medium">Frontend Development</span>
-                    <span>90%</span>
+                    <span>60%</span>
                   </div>
                   <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '90%' }}></div>
+                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '60%' }}></div>
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="font-medium">Backend Development</span>
-                    <span>85%</span>
+                    <span>60%</span>
                   </div>
                   <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '85%' }}></div>
+                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '60%' }}></div>
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="font-medium">UI/UX Design</span>
-                    <span>75%</span>
+                    <span>60%</span>
                   </div>
                   <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '75%' }}></div>
+                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '60%' }}></div>
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="font-medium">DevOps</span>
-                    <span>70%</span>
+                    <span className="font-medium">Database</span>
+                    <span>80%</span>
                   </div>
                   <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '70%' }}></div>
+                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '80%' }}></div>
                   </div>
                 </div>
               </div>
