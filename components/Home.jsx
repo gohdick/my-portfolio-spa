@@ -58,6 +58,8 @@ export default function Home() {
   const techStack = [
     { name: 'PHP', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400' },
     { name: 'Node.js [Fastify]', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' },
+    { name: 'JavaScript', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' },
+    { name: 'jQuery', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
     { name: 'React', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
     { name: 'Next.js', color: 'bg-gray-100 text-gray-800 dark:bg-gray-900/50 dark:text-gray-300' },
     { name: 'TypeScript', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
@@ -68,8 +70,12 @@ export default function Home() {
     { name: 'VS Code', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
     { name: 'Navicat', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' },
     { name: 'Git', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
-    { name: 'Figma', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' },
     { name: 'Postman', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300' },
+  ];
+
+  const database = [
+    { name: 'MySQL', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' },
+    { name: 'Oracle', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
   ];
 
   const titleRef = useRef(null);
@@ -79,6 +85,7 @@ export default function Home() {
   const ctaButtonsRef = useRef(null);
   const profileImageRef = useRef(null);
   const developmentToolsRef = useRef(null);
+  const databaseRef = useRef(null);
 
   useEffect(() => {
     if (titleRef.current) fadeIn(titleRef.current, 0, 0.5);
@@ -87,6 +94,7 @@ export default function Home() {
     if (ctaButtonsRef.current) slideIn(ctaButtonsRef.current, 'up', 0.6, 0.5);
     if (profileImageRef.current) fadeIn(profileImageRef.current, 0.3, 0.8);
     if (developmentToolsRef.current) slideIn(developmentToolsRef.current, 'up', 0.8, 0.5);
+    if (databaseRef.current) slideIn(databaseRef.current, 'up', 1, 0.5);
 
     if (techBadgesRef.current) {
       const badges = techBadgesRef.current.querySelectorAll('.tech-badge');
@@ -263,6 +271,28 @@ export default function Home() {
                     whileHover={{ y: -5, scale: 1.05 }}
                     className={`${tool.color} px-3 py-1.5 rounded-full text-sm font-medium shadow-sm`}>
                     {tool.name}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+            
+            {/* Database */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="pt-2">
+              <h3 className="text-sm uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-3">Database</h3>
+              <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                {database.map((db, index) => (
+                  <motion.span 
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.7 + index * 0.1 }}
+                    whileHover={{ y: -5, scale: 1.05 }}
+                    className={`${db.color} px-3 py-1.5 rounded-full text-sm font-medium shadow-sm`}>
+                    {db.name}
                   </motion.span>
                 ))}
               </div>
