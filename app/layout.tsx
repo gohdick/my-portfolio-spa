@@ -1,6 +1,14 @@
-
 import './globals.css'
 import { Geist } from 'next/font/google'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Goh-Dik Portfolio',
+  description: 'My personal developer portfolio',
+  icons: {
+    icon: '/favicon.ico',
+  },
+}
 
 const geist = Geist({
     subsets: ['latin'],
