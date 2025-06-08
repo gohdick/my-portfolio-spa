@@ -200,7 +200,7 @@ export default function Home() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
               ref={titleRef}
             >
-              Hi, I'm <span className="text-blue-600 dark:text-blue-400">Goh</span>
+              Hi, I'm <span className="text-blue-600 dark:text-blue-400">Goh Dik</span>
             </motion.h1>
           </div>
           
