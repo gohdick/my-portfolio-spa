@@ -5,7 +5,7 @@ const projects = [
         tech: ['Next.js', 'Tailwind', 'JavaScript', 'TypeScript' ,'SPA'],
         image: '/my_profile.png',
         github: 'https://github.com/gohdick/my-portfolio-spa',
-        demo: 'https://my-portfolio-spa.goohdik.dev'
+        demo: 'https://resume.gohdik.dev'
     },
     {
         name: 'treasury-coop-member',
