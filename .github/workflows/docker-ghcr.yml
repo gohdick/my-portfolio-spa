@@ -29,7 +29,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/gohdik/my-portfolio-spa:latest
+          tags: ghcr.io/gohdick/my-portfolio-spa:latest
           provenance: false
           labels: |
-            org.opencontainers.image.source=https://github.com/gohdik/my-portfolio-spa
+            org.opencontainers.image.source=https://github.com/gohdick/my-portfolio-spa
