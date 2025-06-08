@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { fadeIn, slideIn, staggerItems } from '../utils/motion';
 import { motion, useSpring, useMotionValue } from 'framer-motion';
 
+
 export default function Home() {
   // Draggable icon with spring physics
   const dragConstraints = useRef(null);
@@ -60,8 +61,7 @@ export default function Home() {
     { name: 'JavaScript', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' },
     { name: 'jQuery', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
     { name: 'Node.js [Fastify]', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' },
-    { name: 'React', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
-    { name: 'Next.js', color: 'bg-gray-100 text-gray-800 dark:bg-gray-900/50 dark:text-gray-300' },
+    { name: 'React [Next.js]', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
     { name: 'TypeScript', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
     { name: 'Tailwind', color: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300' },
 
@@ -327,7 +327,26 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+        <div className="w-full mt-12 mb-4 overflow-hidden relative py-3 bg-gradient-to-r from-gray-900/10 via-blue-900/20 to-gray-900/10 dark:from-gray-800/30 dark:via-blue-800/40 dark:to-gray-800/30 rounded-xl">
+            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+            <div className="absolute inset-0 flex items-center">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-blue-500/50 dark:via-blue-400/50 to-transparent"></div>
+            </div>
+            <motion.p 
+              initial={{ x: '100%' }}
+              animate={{ x: '-100%' }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 16,
+                ease: "linear"
+              }}
+              className="text-2xl md:text-3xl whitespace-nowrap tracking-wider relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.2)] dark:drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.2)] font-bold ibm-plex-thai"
+            >
+              ถ้าเขียนโค้ดแล้วไม่บั๊ก แสดงว่ายังไม่ได้รัน
+            </motion.p>
+          </div>
       </div>
+
     </section>
   );
 }

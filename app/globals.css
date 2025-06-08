@@ -1,1 +1,6 @@
 @import 'tailwindcss';
+
+/* Custom font classes */
+.ibm-plex-thai {
+  font-family: var(--font-ibm-plex-thai-looped), sans-serif;
+}
