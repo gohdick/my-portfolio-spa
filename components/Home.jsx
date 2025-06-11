@@ -67,12 +67,12 @@ export default function Home() {
 
   ];
   
-  const developmentTools = [
-    { name: 'VS Code', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
-    { name: 'Navicat', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' },
-    { name: 'Git', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
-    { name: 'Postman', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300' },
-  ];
+  // const developmentTools = [
+  //   { name: 'VS Code', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
+  //   { name: 'Navicat', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' },
+  //   { name: 'Git', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
+  //   { name: 'Postman', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300' },
+  // ];
 
   const database = [
     { name: 'MySQL', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' },
@@ -86,7 +86,7 @@ export default function Home() {
   const techBadgesRef = useRef(null);
   const ctaButtonsRef = useRef(null);
   const profileImageRef = useRef(null);
-  const developmentToolsRef = useRef(null);
+  // const developmentToolsRef = useRef(null);
   const databaseRef = useRef(null);
 
   useEffect(() => {
@@ -95,7 +95,7 @@ export default function Home() {
     if (techStackRef.current) slideIn(techStackRef.current, 'up', 0.4, 0.5);
     if (ctaButtonsRef.current) slideIn(ctaButtonsRef.current, 'up', 0.6, 0.5);
     if (profileImageRef.current) fadeIn(profileImageRef.current, 0.3, 0.8);
-    if (developmentToolsRef.current) slideIn(developmentToolsRef.current, 'up', 0.8, 0.5);
+    // if (developmentToolsRef.current) slideIn(developmentToolsRef.current, 'up', 0.8, 0.5);
     if (databaseRef.current) slideIn(databaseRef.current, 'up', 1, 0.5);
 
     if (techBadgesRef.current) {
@@ -257,7 +257,7 @@ export default function Home() {
             </motion.div>
             
             {/* Development Tools */}
-            <motion.div 
+            {/* <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -276,7 +276,7 @@ export default function Home() {
                   </motion.span>
                 ))}
               </div>
-            </motion.div>
+            </motion.div> */}
             
             {/* Database */}
             <motion.div 

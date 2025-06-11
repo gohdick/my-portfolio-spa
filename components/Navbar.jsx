@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'; // corrected import statement
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   
   // Handle dark mode toggle
   useEffect(() => {
@@ -29,13 +30,31 @@ export default function Navbar() {
     localStorage.setItem('darkMode', !darkMode);
   };
   
-  // Handle scroll effect
+  // Handle scroll effect and section detection
   useEffect(() => {
     const handleScroll = () => {
+      // Update navbar background
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
+      }
+      
+      // Detect active section
+      const sections = ['home', 'Tools', 'projects', 'about', 'contact'];
+      const scrollPosition = window.scrollY + 200; // Add offset to detect section earlier
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+            break;
+          }
+        }
       }
     };
     
@@ -48,6 +67,9 @@ export default function Navbar() {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
+      // Update active section
+      setActiveSection(targetId);
+      
       window.scrollTo({
         top: targetElement.offsetTop - 80, // Offset for navbar height
         behavior: 'smooth'
@@ -72,12 +94,16 @@ export default function Navbar() {
         </a>
         
         <div className="hidden md:flex items-center space-x-8">
-          {['home', 'projects', 'about', 'contact'].map((item) => (
+          {['home', 'Tools', 'projects', 'about', 'contact'].map((item) => (
             <a 
               key={item}
               href={`#${item}`} 
               onClick={(e) => handleNavClick(e, item)}
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors capitalize">
+              className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 capitalize
+                ${item === activeSection 
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30' 
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 hover:shadow-md hover:scale-105'}
+              `}>
               {item}
             </a>
           ))}

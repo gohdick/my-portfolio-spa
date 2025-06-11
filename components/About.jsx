@@ -92,16 +92,9 @@ export default function About() {
               <div className="space-y-6">
                 <div className="relative pl-8 border-l-2 border-blue-600 dark:border-blue-400">
                   <div className="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-[9px] top-0"></div>
-                  <h4 className="text-lg font-bold">Senior Frontend Developer</h4>
-                  <p className="text-blue-600 dark:text-blue-400">Tech Company • 2022 - Present</p>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300">Led the development of modern web applications using React, Next.js, and TypeScript.</p>
-                </div>
-                
-                <div className="relative pl-8 border-l-2 border-blue-600 dark:border-blue-400">
-                  <div className="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-[9px] top-0"></div>
-                  <h4 className="text-lg font-bold">Full Stack Developer</h4>
-                  <p className="text-blue-600 dark:text-blue-400">Digital Agency • 2019 - 2022</p>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300">Developed and maintained various client projects using Node.js, Express, and MongoDB.</p>
+                  <h4 className="text-lg font-bold">Full Stack Web Developer</h4>
+                  <p className="text-blue-600 dark:text-blue-400">BIZPOTENTIAL • Present</p>
+                  <p className="mt-2 text-gray-600 dark:text-gray-300">Developing web applications using PHP, CodeIgniter, MySQL, Oracle, JavaScript, jQuery, and Bootstrap.</p>
                 </div>
               </div>
             </div>
@@ -111,16 +104,16 @@ export default function About() {
               <div className="space-y-6">
                 <div className="relative pl-8 border-l-2 border-blue-600 dark:border-blue-400">
                   <div className="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-[9px] top-0"></div>
-                  <h4 className="text-lg font-bold">Master's in Computer Science</h4>
-                  <p className="text-blue-600 dark:text-blue-400">University Name • 2017 - 2019</p>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300">Specialized in Web Technologies and Cloud Computing</p>
+                  <h4 className="text-lg font-bold">BURIRAM RAJABHAT UNIVERSITY</h4>
+                  <p className="text-blue-600 dark:text-blue-400">Bachelor of Science Program in Computer Science </p>
+                  <p className="mt-2 text-gray-600 dark:text-gray-300">2015 - 2018</p>
                 </div>
                 
                 <div className="relative pl-8 border-l-2 border-blue-600 dark:border-blue-400">
                   <div className="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-[9px] top-0"></div>
-                  <h4 className="text-lg font-bold">Bachelor's in Software Engineering</h4>
-                  <p className="text-blue-600 dark:text-blue-400">University Name • 2013 - 2017</p>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300">Graduated with honors, focused on full-stack development</p>
+                  <h4 className="text-lg font-bold">TRAINING SOFTWARE TESTER</h4>
+                  <p className="text-blue-600 dark:text-blue-400">By Software testing by P’Beam</p>
+                  <p className="mt-2 text-gray-600 dark:text-gray-300">2023</p>
                 </div>
               </div>
             </div>

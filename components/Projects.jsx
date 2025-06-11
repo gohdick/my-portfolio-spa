@@ -104,15 +104,6 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
-        
-        {/* View More Projects Button */}
-        {/* <div className="mt-12 text-center">
-          <a 
-            href="#" 
-            className="inline-block border-2 border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400 px-6 py-3 rounded-lg font-medium hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all">
-            View More Projects
-          </a>
-        </div> */}
       </div>
 
       {/* Image Modal */}
