@@ -93,7 +93,7 @@ export default function Navbar() {
           <span className="text-blue-600 dark:text-blue-400">/&gt;</span>
         </a>
         
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-3">
           {['home', 'Tools', 'projects', 'about', 'contact'].map((item) => (
             <a 
               key={item}
@@ -109,7 +109,7 @@ export default function Navbar() {
           ))}
           
           {/* Dark Mode Toggle */}
-          <button 
+          {/* <button 
             onClick={toggleDarkMode}
             aria-label="Toggle Dark Mode"
             className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -122,7 +122,7 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
               </svg>
             )}
-          </button>
+          </button> */}
         </div>
         
         {/* Mobile Menu Button */}

@@ -1,8 +1,49 @@
 "use client";
 
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Contact() {
+  // State for form fields
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Prepare email content
+    const { name, email, subject, message } = formData;
+    const mailtoLink = `mailto:thirasksimtong@gmail.com?subject=${encodeURIComponent(subject || 'Contact from Portfolio')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;    
+    
+    // Open email client
+    window.open(mailtoLink, '_blank');
+    
+    // Show toast notification
+    toast.success('ขอบคุณที่อีเมลถึงฉัน! ฉันจะติดต่อกลับโดยเร็วที่สุด', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+  };
+
   return (
     <section id="contact" className="py-20 px-4 bg-white dark:bg-gray-900">
       <div className="container mx-auto max-w-6xl">
@@ -48,7 +89,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Phone</h4>
-                  <p className="text-gray-600 dark:text-gray-300">089 9162 146</p>
+                  <a href="tel:0899162146" className="text-blue-600 dark:text-blue-400 hover:underline">0899162146</a>
                 </div>
               </div>
               
@@ -61,7 +102,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Location</h4>
-                  <p className="text-gray-600 dark:text-gray-300">Bangkolame, Bangkok 10120 Thailand</p>
+                  <a href="https://www.google.com/maps/place/Bangkolame,+Bangkok,+10120,+Thailand" target="_blank" className="text-blue-600 dark:text-blue-400 hover:underline">Bangkolame, Bangkok 10120 Thailand</a>
                 </div>
               </div>
             </div>
@@ -96,7 +137,7 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
             <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Name</label>
@@ -105,6 +146,9 @@ export default function Contact() {
                     id="name" 
                     placeholder="John Doe" 
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
                 <div>
@@ -114,6 +158,9 @@ export default function Contact() {
                     id="email" 
                     placeholder="john@example.com" 
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
               </div>
@@ -125,6 +172,9 @@ export default function Contact() {
                   id="subject" 
                   placeholder="Project Inquiry" 
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               
@@ -135,18 +185,22 @@ export default function Contact() {
                   rows={5} 
                   placeholder="Your message here..." 
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               
               <button 
                 type="submit" 
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors shadow-lg hover:shadow-blue-500/20">
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors shadow-lg hover:shadow-blue-500/20 cursor-pointer">
                 Send Message
               </button>
             </form>
           </motion.div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 }

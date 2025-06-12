@@ -67,12 +67,6 @@ export default function Home() {
 
   ];
   
-  // const developmentTools = [
-  //   { name: 'VS Code', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
-  //   { name: 'Navicat', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' },
-  //   { name: 'Git', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
-  //   { name: 'Postman', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300' },
-  // ];
 
   const database = [
     { name: 'MySQL', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' },
@@ -86,7 +80,6 @@ export default function Home() {
   const techBadgesRef = useRef(null);
   const ctaButtonsRef = useRef(null);
   const profileImageRef = useRef(null);
-  // const developmentToolsRef = useRef(null);
   const databaseRef = useRef(null);
 
   useEffect(() => {
@@ -95,7 +88,6 @@ export default function Home() {
     if (techStackRef.current) slideIn(techStackRef.current, 'up', 0.4, 0.5);
     if (ctaButtonsRef.current) slideIn(ctaButtonsRef.current, 'up', 0.6, 0.5);
     if (profileImageRef.current) fadeIn(profileImageRef.current, 0.3, 0.8);
-    // if (developmentToolsRef.current) slideIn(developmentToolsRef.current, 'up', 0.8, 0.5);
     if (databaseRef.current) slideIn(databaseRef.current, 'up', 1, 0.5);
 
     if (techBadgesRef.current) {
@@ -255,28 +247,6 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
-            
-            {/* Development Tools */}
-            {/* <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="pt-2">
-              <h3 className="text-sm uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-3">Development Tools</h3>
-              <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                {developmentTools.map((tool, index) => (
-                  <motion.span 
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.7 + index * 0.1 }}
-                    whileHover={{ y: -5, scale: 1.05 }}
-                    className={`${tool.color} px-3 py-1.5 rounded-full text-sm font-medium shadow-sm`}>
-                    {tool.name}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div> */}
             
             {/* Database */}
             <motion.div 
