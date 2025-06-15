@@ -297,26 +297,7 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-        <div className="w-full mt-12 mb-4 overflow-hidden relative py-3 bg-gradient-to-r from-gray-900/10 via-blue-900/20 to-gray-900/10 dark:from-gray-800/30 dark:via-blue-800/40 dark:to-gray-800/30 rounded-xl">
-            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-            <div className="absolute inset-0 flex items-center">
-              <div className="h-px w-full bg-gradient-to-r from-transparent via-blue-500/50 dark:via-blue-400/50 to-transparent"></div>
-            </div>
-            <motion.p 
-              initial={{ x: '100%' }}
-              animate={{ x: '-100%' }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 16,
-                ease: "linear"
-              }}
-              className="text-2xl md:text-3xl whitespace-nowrap tracking-wider relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.2)] dark:drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.2)] font-bold ibm-plex-thai"
-            >
-              ถ้าเขียนโค้ดแล้วไม่บั๊ก แสดงว่ายังไม่ได้รัน
-            </motion.p>
-          </div>
       </div>
-
     </section>
   );
 }

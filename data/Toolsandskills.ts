@@ -23,8 +23,8 @@ export const categories = [
   },
   {
     name: "Authentication & API",
-    icons: ["/icons8-jwt.svg", "/web-api-icon.svg"],
-    iconAlts: ["JWT", "API"],
+    icons: ["/icons8-jwt.svg", "/web-api-icon.svg", "/json-file-svgrepo-com.svg"],
+    iconAlts: ["JWT", "API", "JSON"],
     color: "from-green-500 to-teal-500",
     shadowColor: "rgba(16, 185, 129, 0.5)"
   },
