@@ -7,30 +7,22 @@ const projects = [
         github: 'https://github.com/gohdick/my-portfolio-spa',
         demo: 'https://resume.gohdik.dev'
     },
+    // {
+    //     name: 'mvc-rent-erp',
+    //     description: 'ระบบจองรถอิเล็กทรอนิกส์',
+    //     tech: ['PHP', 'MySQL', 'jQuery', 'Tailwind', 'MVC' ],
+    //     image: '/data_car.png',
+    //     github: 'https://github.com/gohdick/mvc-rent-erp',
+    //     demo: 'https://mvc-rent-erp.goohdik.dev'
+    // },
     {
-        name: 'treasury-coop-member',
-        description: 'ระบบสมาชิกและหุ้นสหกรณ์ออมทรัพย์',
-        tech: ['PHP', 'MySQL', 'jQuery', 'Bootstrap' ],
-        image: '/member_shares.png',
-        github: '#',
-        demo: 'http://203.151.166.132/treasury_coop_member/workflow/'
-    },
-    {
-        name: 'mvc-rent-erp',
-        description: 'ระบบจองรถอิเล็กทรอนิกส์',
-        tech: ['PHP', 'MySQL', 'jQuery', 'Tailwind', 'MVC' ],
-        image: '/data_car.png',
-        github: 'https://github.com/gohdick/mvc-rent-erp',
-        demo: 'https://mvc-rent-erp.goohdik.dev'
-    },
-    {
-        name: 'store-ver-auth-jwt',
-        description: 'Backend API ร้านขายสินค้าออนไลน์',
-        tech: ['Node.js', 'Fastify', 'MySQL', 'JWT'],
+        name: 'store-wine',
+        description: 'เว็บไซต์ขายไวน์',
+        tech: ['Node.js (Fastify)', 'Frontend: Next.js', 'MySQL', 'Tailwind', 'JavaScript', 'TypeScript', 'JWT', 'RESTful API'],
         features: ['JWT'],
-        image: '/api_store_v1.png',
-        github: 'https://github.com/gohdick/fastify_mysql-main',
-        demo: 'https://store_v1.goohdik.dev'
+        image: '/wine_01.png',
+        github: '#',
+        demo: '#'
     },
     {
         name: 'daily-expense',

@@ -57,21 +57,20 @@ export default function Home() {
   }, []);
   
   const techStack = [
-    { name: 'PHP', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400' },
-    { name: 'JavaScript', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' },
-    { name: 'jQuery', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
-    { name: 'Node.js [Fastify]', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' },
-    { name: 'React [Next.js]', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
-    { name: 'TypeScript', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
-    { name: 'Tailwind', color: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300' },
+    { name: 'PHP', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'JavaScript', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'jQuery', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Node.js (Fastify)', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Next.js', color: 'bg-white-100 text-black-800 dark:bg-white-900/30 dark:text-black-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'TypeScript', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Tailwind', color: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
 
   ];
   
-
   const database = [
-    { name: 'MySQL', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' },
-    { name: 'Oracle', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
-    { name: 'SQL Server', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' },
+    { name: 'MySQL', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Oracle', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'SQL Server', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
   ];
 
   const titleRef = useRef(null);
@@ -107,7 +106,6 @@ export default function Home() {
           {/* Draggable Icon with Spring Physics */}
           <div ref={dragConstraints} className="fixed inset-0 pointer-events-none z-50">
             <motion.div
-              className="fixed top-20 right-10 z-50 cursor-grab active:cursor-grabbing pointer-events-auto"
               style={{ x: springX, y: springY }}
               drag
               dragElastic={0.8}
@@ -141,15 +139,9 @@ export default function Home() {
                 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className="text-sm font-medium">เล่นกับเราหน่อย</span>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gray-800 rotate-45"></div>
+                
               </motion.div>
               
-              <div className="bg-blue-500 dark:bg-blue-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
             </motion.div>
           </div>
           

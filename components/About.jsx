@@ -34,49 +34,27 @@ export default function About() {
                 When I am not in front of my computer, I am often hiking, hanging out with friends, or exploring beautiful landscapes.
             </p>
             
-            {/* Skills */}
-            <div>
-              <h3 className="text-xl font-bold mb-4">Core Skills</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="font-medium">Frontend Development</span>
-                    <span>60%</span>
-                  </div>
-                  <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '60%' }}></div>
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="font-medium">Backend Development</span>
-                    <span>60%</span>
-                  </div>
-                  <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '60%' }}></div>
+            {/* Professional Strengths */}
+            <div className="my-8">
+              <h3 className="text-2xl font-bold text-center text-blue-600 dark:text-blue-400 mb-6">Professional Strengths</h3>
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+                {/* Card 1: Problem Solving */}
+                <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 p-1">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  <div className="relative p-6 h-full flex flex-col">
+                    <div className="bg-white dark:bg-gray-800 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4 shadow-md">
+                      <svg className="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Junior Developer</h4>
+                    <p className="text-gray-600 dark:text-gray-300 flex-grow">Junior Developer with full-cycle development experience, from client requirements to delivery. Strong communicator and team player, seeking a structured dev team to grow and focus on software development.</p>
+                    <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                      <span className="text-blue-600 dark:text-blue-400 text-sm font-medium">Strength</span>
+                    </div>
                   </div>
                 </div>
-                
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="font-medium">UI/UX Design</span>
-                    <span>60%</span>
-                  </div>
-                  <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '60%' }}></div>
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="font-medium">Database</span>
-                    <span>80%</span>
-                  </div>
-                  <div className="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: '80%' }}></div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </motion.div>
