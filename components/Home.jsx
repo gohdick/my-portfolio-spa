@@ -56,15 +56,21 @@ export default function Home() {
     return () => window.removeEventListener('resize', updateConstraints);
   }, []);
   
-  const techStack = [
-    { name: 'PHP (CodeIgniter)', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'JavaScript', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'jQuery', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'Node.js (Fastify)', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'Vue.js (Nuxt)', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'Next.js', color: 'bg-white-100 text-black-800 dark:bg-white-900/30 dark:text-black-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+  // Reorganized tech stacks with frontend and backend separation
+  const frontendTech = [
+    { name: 'HTML', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'CSS', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
     { name: 'Tailwind', color: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'Bootstrap', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Bootstrap', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'JavaScript', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'JQuery/Ajax', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Next.js', color: 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Vue.js (Nuxt)', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+  ];
+
+  const backendTech = [
+    { name: 'PHP (CodeIgniter)', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Node.js (Fastify)', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
   ];
   
   const database = [
@@ -74,7 +80,8 @@ export default function Home() {
 
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
-  const techStackRef = useRef(null);
+  const frontendTechRef = useRef(null);
+  const backendTechRef = useRef(null);
   const techBadgesRef = useRef(null);
   const ctaButtonsRef = useRef(null);
   const profileImageRef = useRef(null);
@@ -83,10 +90,11 @@ export default function Home() {
   useEffect(() => {
     if (titleRef.current) fadeIn(titleRef.current, 0, 0.5);
     if (descriptionRef.current) fadeIn(descriptionRef.current, 0.2, 0.5);
-    if (techStackRef.current) slideIn(techStackRef.current, 'up', 0.4, 0.5);
+    if (frontendTechRef.current) slideIn(frontendTechRef.current, 'up', 0.4, 0.5);
+    if (backendTechRef.current) slideIn(backendTechRef.current, 'up', 0.5, 0.5);
     if (ctaButtonsRef.current) slideIn(ctaButtonsRef.current, 'up', 0.6, 0.5);
     if (profileImageRef.current) fadeIn(profileImageRef.current, 0.3, 0.8);
-    if (databaseRef.current) slideIn(databaseRef.current, 'up', 1, 0.5);
+    if (databaseRef.current) slideIn(databaseRef.current, 'up', 0.7, 0.5);
 
     if (techBadgesRef.current) {
       const badges = techBadgesRef.current.querySelectorAll('.tech-badge');
@@ -217,20 +225,44 @@ export default function Home() {
               A passionate full-stack developer crafting beautiful and functional web experiences. I specialize in building modern, responsive applications with cutting-edge technologies.
             </motion.p>
             
-            {/* Tech Stack */}
+            {/* Frontend Technologies */}
             <motion.div 
+              ref={frontendTechRef}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               className="pt-2">
-              <h3 className="text-sm uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-3">Tech Stack</h3>
+              <h3 className="text-sm uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-3">Frontend Tech</h3>
               <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                {techStack.map((tech, index) => (
+                {frontendTech.map((tech, index) => (
                   <motion.span 
                     key={index}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.6 + index * 0.1 }}
+                    transition={{ delay: 0.6 + index * 0.05 }}
+                    whileHover={{ y: -5, scale: 1.05 }}
+                    className={`${tech.color} px-3 py-1.5 rounded-full text-sm font-medium shadow-sm`}>
+                    {tech.name}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+            
+            {/* Backend Technologies */}
+            <motion.div 
+              ref={backendTechRef}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55 }}
+              className="pt-2">
+              <h3 className="text-sm uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-3">Backend Tech</h3>
+              <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                {backendTech.map((tech, index) => (
+                  <motion.span 
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.65 + index * 0.05 }}
                     whileHover={{ y: -5, scale: 1.05 }}
                     className={`${tech.color} px-3 py-1.5 rounded-full text-sm font-medium shadow-sm`}>
                     {tech.name}
@@ -241,6 +273,7 @@ export default function Home() {
             
             {/* Database */}
             <motion.div 
+              ref={databaseRef}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -263,6 +296,7 @@ export default function Home() {
             
             {/* Call to Action Buttons */}
             <motion.div 
+              ref={ctaButtonsRef}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
