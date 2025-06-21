@@ -16,9 +16,9 @@ export const categories = [
   },
   {
     name: "Development Tools",
-    icons: ["/icons8-visual-studio.svg", "/icons8-navicat.svg", "/icons8-git.svg", "/icons8-github.svg", "/postman-icon.svg"],
-    iconAlts: ["VS Code", "Navicat", "Git", "GitHub", "Postman"],
-    color: "from-yellow-500 to-orange-600",
+    icons: ["/icons8-visual-studio.svg", "/icons8-navicat.svg", "/icons8-git.svg", "/icons8-github.svg", "/postman-icon.svg", "/Cloudflare-Logo.wine.png", "/Nginx-proxy-manager.png"],
+    iconAlts: ["VS Code", "Navicat", "Git", "GitHub", "Postman", "Cloudflare", "Nginx"],
+    color: "from-yellow-300 to-orange-300",
     shadowColor: "rgba(255, 215, 0, 0.5)"
   },
   {

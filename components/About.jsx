@@ -25,9 +25,6 @@ export default function About() {
             className="space-y-6">
             <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400">My Journey</h3>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                I started my coding journey with a passion for creating things that could be shared on the internet. Today, I have the privilege of building software for clients. 
-            </p>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 Today, I focus on creating accessible and inclusive digital products and experiences for a wide range of clients. I am constantly learning and exploring new technologies to stay current.  
             </p>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">

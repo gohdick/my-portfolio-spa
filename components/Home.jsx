@@ -57,20 +57,19 @@ export default function Home() {
   }, []);
   
   const techStack = [
-    { name: 'PHP', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'PHP (CodeIgniter)', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
     { name: 'JavaScript', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
     { name: 'jQuery', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
     { name: 'Node.js (Fastify)', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Vue.js (Nuxt)', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
     { name: 'Next.js', color: 'bg-white-100 text-black-800 dark:bg-white-900/30 dark:text-black-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'TypeScript', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
     { name: 'Tailwind', color: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-
+    { name: 'Bootstrap', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
   ];
   
   const database = [
     { name: 'MySQL', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'Oracle', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'SQL Server', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Oracle', color: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
   ];
 
   const titleRef = useRef(null);
@@ -100,9 +99,9 @@ export default function Home() {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center py-24 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="home" className="flex items-center justify-center py-24 px-4">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Draggable Icon with Spring Physics */}
           <div ref={dragConstraints} className="fixed inset-0 pointer-events-none z-50">
             <motion.div
