@@ -1,12 +1,29 @@
 // components/Home.jsx
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from "react";
 import { fadeIn, slideIn, staggerItems } from '../utils/motion';
 import { motion, useSpring, useMotionValue } from 'framer-motion';
 
 
 export default function Home() {
+  // Typewriter effect for real name
+  const realName = "MR. THIRASAK SIMTONG";
+  const [typedName, setTypedName] = useState("");
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  useEffect(() => {
+    if (!isClient) return;
+    let i = 0;
+    const timer = setInterval(() => {
+      setTypedName(realName.slice(0, i + 1));
+      i++;
+      if (i === realName.length) clearInterval(timer);
+    }, 60);
+    return () => clearInterval(timer);
+  }, [isClient]);
   // Draggable icon with spring physics
   const dragConstraints = useRef(null);
   const x = useMotionValue(0);
@@ -195,7 +212,22 @@ export default function Home() {
             >
               Hi, I'm <span className="text-blue-600 dark:text-blue-400">Goh Dik</span>
             </motion.h1>
+
+            {/* Typewriter Effect for Real Name */}
+            {isClient && (
+              <motion.p
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-3xl md:text-3xl text-gray-600 dark:text-gray-300 font-semibold mt-0 drop-shadow-lg"
+              >
+                {typedName}
+                <span className="animate-pulse"></span>
+              </motion.p>
+            )}
+
           </div>
+          
           
           {/* Content */}
           <div className="space-y-6 text-center lg:text-left">
@@ -212,7 +244,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-1">
-                <span className="text-gray-900 dark:text-white">Web </span>
+                <span className="text-gray-900 dark:text-white">Junior </span>
                 <span className="text-blue-600 dark:text-blue-400">Developer</span>
               </motion.h1>
             </div>
