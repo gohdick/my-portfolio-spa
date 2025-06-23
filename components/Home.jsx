@@ -189,7 +189,6 @@ export default function Home() {
                 className="w-full h-full relative"
               >
                 <motion.img
-                  // src="/gohdik_ver1.jpg"
                   src="/my_picture_v2.png"
                   alt="Goh Dik"
                   className="w-full h-full object-cover"
