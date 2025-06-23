@@ -189,7 +189,7 @@ export default function Home() {
                 className="w-full h-full relative"
               >
                 <motion.img
-                  src="/my_picture_v1.png"
+                  src="/Cloudflare-Logo.wine.png"
                   alt="Goh Dik"
                   className="w-full h-full object-cover"
                   whileHover={{ scale: 1.05 }}
