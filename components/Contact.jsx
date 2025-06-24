@@ -55,7 +55,7 @@ export default function Contact() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Me</h2>
           <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
           <p className="mt-6 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind or just want to say hello? Feel free to reach out. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          Looking for a collaborator or need help with a project? I'm currently open to new job opportunities as well as freelance work. Feel free to reach out — I'm always happy to discuss new ideas, exciting projects, or ways I can contribute to your team or vision.
           </p>
         </motion.div>
         

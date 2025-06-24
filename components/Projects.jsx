@@ -28,6 +28,10 @@ export default function Projects() {
           <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
           <p className="mt-6 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Here are some of my recent projects. Each one was carefully crafted with attention to detail, performance, and user experience.  
+            
+          </p>
+          <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Please note that some projects cannot be publicly disclosed, as they involve internal systems developed for the company I work for.
           </p>
         </motion.div>
         

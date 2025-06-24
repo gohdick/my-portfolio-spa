@@ -1,7 +1,7 @@
 const projects = [
     {
         name: 'my-portfolio-spa',
-        description: 'Portfolio Online',
+        description: 'Portfolio Single Page Application',
         tech: ['Next.js', 'Tailwind', 'JavaScript'],
         image: '/my_profile.png',
         github: 'https://github.com/gohdick/my-portfolio-spa',
@@ -9,7 +9,7 @@ const projects = [
     },
     {
         name: 'store-wine',
-        description: 'เว็บไซต์ขายไวน์',
+        description: 'WebApplication for Wine Store',
         tech: ['Node.js (Fastify)', 'Frontend: Vue.js (Nuxt)', 'MySQL', 'Tailwind', 'JavaScript', 'JWT', 'RESTful API'],
         features: ['JWT'],
         image: '/wine_01.png',
@@ -17,22 +17,13 @@ const projects = [
         demo: '#'
     },
     {
-        name: 'daily-expense',
-        description: 'ระบบบันทึกค่าใช้จ่ายรายวัน',
-        tech: ['Next.js', 'Tailwind', 'JavaScript'],
-        image: '/daily_expense_p1.png',
-        github: 'https://github.com/gohdick/daily-expense',
-        demo: 'https://daily-expense.goohdik.dev'
-    },
-    {
-        name: 'habit-tracker',
-        description: 'ระบบ Habit Tracker (ติดตามนิสัยดี ๆ)',
-        tech: ['Next.js', 'Tailwind', 'JavaScript'],
-        image: '/habit_tracker_p1.png',
-        github: 'https://github.com/gohdick/habit-tracker',
-        demo: 'https://habit-tracker.goohdik.dev'
+        name: 'weather-app',
+        description: 'WebApplication for Weather',
+        tech: ['Nuxt', 'Tailwind', 'JavaScript', 'API OpenWeatherMap'],
+        image: '/weather_01.png',
+        github: '#',
+        demo: '#'
     }
-
 ]
 
 export default projects
