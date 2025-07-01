@@ -17,12 +17,12 @@ const projects = [
         demo: '#'
     },
     {
-        name: 'weather-app',
+        name: 'WeatherCast',
         description: 'WebApplication for Weather',
-        tech: ['Nuxt', 'Tailwind', 'JavaScript', 'API OpenWeatherMap'],
-        image: '/weather_01.png',
-        github: '#',
-        demo: '#'
+        tech: ['Nuxt.js', 'Tailwind', 'API OpenWeatherMap'],
+        image: '/weathercast.png',
+        github: 'https://github.com/gohdick/nuxt-weather-app',
+        demo: 'https://WeatherCast.gohdik.dev'
     }
 ]
 
