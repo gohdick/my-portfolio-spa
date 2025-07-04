@@ -4,6 +4,22 @@
 import { motion } from 'framer-motion';
 
 export default function About() {
+  
+  const interests = [ 
+    {
+      name: "Hiking",
+      icon: "🌄",
+    },
+    {
+      name: "Singing",
+      icon: "🎤",
+    },
+    {
+      name: "cook",
+      icon: "🥘",
+    },
+  ];
+
   return (
     <section id="about" className="py-20 px-4 bg-gray-50 dark:bg-gray-800/50">
       <div className="container mx-auto max-w-6xl">
@@ -77,21 +93,13 @@ export default function About() {
                   Hobbies & Interests
                 </h3>
                 <div className="grid grid-cols-3 gap-4 mt-4">
-                  <div className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-md flex flex-col items-center justify-center text-center hover:shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-blue-200/50 dark:hover:shadow-blue-500/20 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-transparent dark:from-blue-500/10 dark:to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="text-3xl mb-2 relative z-10 drop-shadow-sm">🌄</span>
-                    <span className="font-medium text-gray-800 dark:text-gray-200 relative z-10">Hiking</span>
-                  </div>
-                  <div className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-md flex flex-col items-center justify-center text-center hover:shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-blue-200/50 dark:hover:shadow-blue-500/20 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-transparent dark:from-blue-500/10 dark:to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="text-3xl mb-2 relative z-10 drop-shadow-sm">🎵</span>
-                    <span className="font-medium text-gray-800 dark:text-gray-200 relative z-10">Sing</span>
-                  </div>
-                  <div className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-md flex flex-col items-center justify-center text-center hover:shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-blue-200/50 dark:hover:shadow-blue-500/20 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-transparent dark:from-blue-500/10 dark:to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="text-3xl mb-2 relative z-10 drop-shadow-sm">📷</span>
-                    <span className="font-medium text-gray-800 dark:text-gray-200 relative z-10">Photography</span>
-                  </div>
+                  {interests?.map((interest, index) => (
+                    <div key={index} className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-md flex flex-col items-center justify-center text-center hover:shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-blue-200/50 dark:hover:shadow-blue-500/20 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-transparent dark:from-blue-500/10 dark:to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="text-3xl mb-2 relative z-10 drop-shadow-sm">{interest.icon}</span>
+                      <span className="font-medium text-gray-800 dark:text-gray-200 relative z-10">{interest.name}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
