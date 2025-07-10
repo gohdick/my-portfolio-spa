@@ -22,7 +22,7 @@ const projects = [
         tech: ['Nuxt.js', 'TypeScript', 'Tailwind', 'API OpenWeatherMap'],
         image: '/weathercast.png',
         github: 'https://github.com/gohdick/nuxt-weather-app',
-        demo: 'https://WeatherCast.gohdik.dev'
+        demo: 'https://weathercast.gohdik.dev'
     }
 ]
 
