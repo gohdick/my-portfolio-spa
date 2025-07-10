@@ -2,7 +2,7 @@ const projects = [
     {
         name: 'MyPortfolio',
         description: 'Single Page Application',
-        tech: ['Next.js', 'Tailwind', 'JavaScript'],
+        tech: ['Frontend: Next.js', 'Tailwind', 'JavaScript'],
         image: '/my_profile.png',
         github: 'https://github.com/gohdick/my-portfolio-spa',
         demo: 'https://resume.gohdik.dev'
@@ -10,19 +10,26 @@ const projects = [
     {
         name: 'WineDeeDee',
         description: 'Demo WebApplication for Wine Store',
-        tech: ['Node.js (Fastify)', 'Frontend: Vue.js (Nuxt)', 'MySQL', 'Tailwind', 'JavaScript', 'JWT', 'RESTful API'],
-        features: ['JWT'],
-        image: '/wine_01.png',
+        tech: ['Backend: Node.js (Fastify)', 'Frontend: Vue.js (Nuxt)', 'Database: MySQL', 'Tailwind', 'JavaScript', 'JWT', 'RESTful API'],
+        image: '/wine_02.png',
         github: '#',
         demo: '#'
     },
     {
         name: 'WeatherCast',
         description: 'WebApplication for Weather',
-        tech: ['Nuxt.js', 'TypeScript', 'Tailwind', 'API OpenWeatherMap'],
+        tech: ['Frontend: Nuxt.js', 'TypeScript', 'Tailwind', 'REST API'],
         image: '/weathercast.png',
         github: 'https://github.com/gohdick/nuxt-weather-app',
         demo: 'https://weathercast.gohdik.dev'
+    },
+    {
+        name: 'WebSite-Official-Phumin',
+        description: 'WebApplication for Phumin',
+        tech: ['Backend: Node.js (Fastify)', 'Frontend: Vue.js (Nuxt)', 'Database: MySQL', 'Tailwind', 'JavaScript', 'RESTful API'],
+        image: '/phumin-v1.png',
+        github: '#',
+        demo: '#'
     }
 ]
 
