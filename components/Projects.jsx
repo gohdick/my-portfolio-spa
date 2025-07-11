@@ -7,16 +7,37 @@ import 'react-toastify/dist/ReactToastify.css';
 import { motion } from 'framer-motion';
 
 export default function Projects() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  const openImageModal = (imageUrl) => {
-    setSelectedImage(imageUrl);
+  const openImageModal = (project, initialIndex = 0) => {
+    setSelectedProject(project);
+    setCurrentImageIndex(initialIndex);
     document.body.style.overflow = 'hidden';
   };
   
   const closeImageModal = () => {
-    setSelectedImage(null);
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
     document.body.style.overflow = 'auto';
+  };
+  
+  const nextImage = (e) => {
+    e.stopPropagation();
+    if (selectedProject && selectedProject.images.length > 1) {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === selectedProject.images.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  };
+  
+  const prevImage = (e) => {
+    e.stopPropagation();
+    if (selectedProject && selectedProject.images.length > 1) {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === 0 ? selectedProject.images.length - 1 : prevIndex - 1
+      );
+    }
   };
 
   const handleLinkClick = (e, url, type) => {
@@ -54,7 +75,7 @@ export default function Projects() {
         </motion.div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects?.map((project, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -66,7 +87,7 @@ export default function Projects() {
               {/* Project Image with overlay on hover */}
               <div className="relative overflow-hidden group h-48">
                 <img 
-                  src={project.image} 
+                  src={project.images[0]} 
                   alt={project.name} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                 />
@@ -96,7 +117,7 @@ export default function Projects() {
                     </a>
 
                     <button 
-                      onClick={() => openImageModal(project.image)}
+                      onClick={() => openImageModal(project)}
                       className="inline-block bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transition-colors cursor-pointer">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
@@ -131,7 +152,7 @@ export default function Projects() {
       </div>
 
       {/* Image Modal */}
-      {selectedImage && (
+      {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4" onClick={closeImageModal}>
           <div className="relative max-w-4xl max-h-[90vh] w-full">
             <button 
@@ -142,12 +163,47 @@ export default function Projects() {
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
               </svg>
             </button>
-            <img 
-              src={selectedImage} 
-              alt="Enlarged project" 
-              className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-2xl" 
-              onClick={(e) => e.stopPropagation()}
-            />
+            
+            {/* Navigation buttons */}
+            {selectedProject.images.length > 1 && (
+              <>
+                <button 
+                  onClick={prevImage}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white text-black p-3 rounded-full hover:bg-gray-200 transition-colors cursor-pointer shadow-lg z-10"
+                  aria-label="Previous image"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+                </button>
+                
+                <button 
+                  onClick={nextImage}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white text-black p-3 rounded-full hover:bg-gray-200 transition-colors cursor-pointer shadow-lg z-10"
+                  aria-label="Next image"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                </button>
+              </>
+            )}
+            
+            <div className="relative">
+              <img 
+                src={selectedProject.images[currentImageIndex]} 
+                alt={`${selectedProject.name} - Image ${currentImageIndex + 1}`} 
+                className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-2xl" 
+                onClick={(e) => e.stopPropagation()}
+              />
+              
+              {/* Image counter */}
+              {selectedProject.images.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm">
+                  {currentImageIndex + 1} / {selectedProject.images.length}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
