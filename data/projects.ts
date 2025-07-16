@@ -12,7 +12,7 @@ const projects = [
         description: 'Demo WebApplication for Wine Store',
         tech: ['Backend: Node.js (Fastify)', 'Frontend: Vue.js (Nuxt)', 'Database: MySQL', 'Tailwind', 'JavaScript', 'JWT', 'RESTful API'],
         images: ['/wine_02.png'],
-        github: '#',
+        github: 'https://github.com/gohdick/fastify_mysql-main',
         demo: '#'
     },
     {
