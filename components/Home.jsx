@@ -81,24 +81,31 @@ export default function Home() {
     { name: 'Bootstrap', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
     { name: 'JavaScript', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
     { name: 'JQuery/Ajax', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'Next.js', color: 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'Vue.js (Nuxt)', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
   ];
 
   const backendTech = [
-    { name: 'PHP (CodeIgniter)', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
-    { name: 'Node.js (Fastify)', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'PHP', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Node.js', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+  ];
+
+  const fremworkTech = [
+    { name: 'CodeIgniter/CI ,  OOP ,  MVC', color: 'bg-blue-300 text-blue-900 dark:bg-blue-600/30 dark:text-blue-400 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Fastify', color: 'bg-black-100 text-black-800 dark:bg-black-900/30 dark:text-black-400 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Nuxt.js', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'Next.js', color: 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
   ];
   
   const database = [
     { name: 'MySQL', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
     { name: 'Oracle', color: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
+    { name: 'SQL Server', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 dark:shadow-[0_2px_4px_rgb(255,255,255,0.4)]' },
   ];
 
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const frontendTechRef = useRef(null);
   const backendTechRef = useRef(null);
+  const fremworkTechRef = useRef(null);
   const techBadgesRef = useRef(null);
   const ctaButtonsRef = useRef(null);
   const profileImageRef = useRef(null);
@@ -109,6 +116,7 @@ export default function Home() {
     if (descriptionRef.current) fadeIn(descriptionRef.current, 0.2, 0.5);
     if (frontendTechRef.current) slideIn(frontendTechRef.current, 'up', 0.4, 0.5);
     if (backendTechRef.current) slideIn(backendTechRef.current, 'up', 0.5, 0.5);
+    if (fremworkTechRef.current) slideIn(fremworkTechRef.current, 'up', 0.6, 0.5);
     if (ctaButtonsRef.current) slideIn(ctaButtonsRef.current, 'up', 0.6, 0.5);
     if (profileImageRef.current) fadeIn(profileImageRef.current, 0.3, 0.8);
     if (databaseRef.current) slideIn(databaseRef.current, 'up', 0.7, 0.5);
@@ -244,7 +252,8 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-1">
-                <span className="text-gray-900 dark:text-white">Junior </span>
+                <span className="text-gray-900 dark:text-white">Full </span>
+                <span className="text-blue-600 dark:text-blue-300">Stack </span>
                 <span className="text-blue-600 dark:text-blue-400">Developer</span>
               </motion.h1>
             </div>
@@ -303,6 +312,29 @@ export default function Home() {
               </div>
             </motion.div>
             
+            {/* fremwork Technologies */}
+            <motion.div 
+              ref={fremworkTechRef}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55 }}
+              className="pt-2">
+              <h3 className="text-sm uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-3">Fremwork Tech</h3>
+              <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                {fremworkTech.map((tech, index) => (
+                  <motion.span 
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.65 + index * 0.05 }}
+                    whileHover={{ y: -5, scale: 1.05 }}
+                    className={`${tech.color} px-3 py-1.5 rounded-full text-sm font-medium shadow-sm`}>
+                    {tech.name}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+            
             {/* Database */}
             <motion.div 
               ref={databaseRef}
@@ -338,10 +370,16 @@ export default function Home() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all shadow-lg hover:shadow-blue-300/30 dark:hover:shadow-blue-600/20 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
+                <img src="https://www.svgrepo.com/show/452084/pdf.svg" alt="Download CV" className="h-5 w-5" />
                 Download CV
+              </a>
+              <a 
+              href="https://github.com/gohdick"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border-2 border-gray-300 dark:border-gray-600 hover:border-blue-600 dark:hover:border-blue-400 text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2">
+                <img src="/icons8-github.svg" alt="GitHub" className="h-5 w-5" style={{ filter: "invert(1)" }} />
+                GitHub
               </a>
               <a 
                 href="#contact" 

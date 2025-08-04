@@ -116,9 +116,9 @@ export default function About() {
               <div className="space-y-6">
                 <div className="relative pl-8 border-l-2 border-blue-600 dark:border-blue-400">
                   <div className="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-[9px] top-0"></div>
-                  <h4 className="text-lg font-bold">Junior Developer</h4>
-                  <p className="text-blue-600 dark:text-blue-400">BIZPOTENTIAL • Present</p>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300">Developing and maintaining web applications using PHP (CodeIgniter), MySQL, Oracle, JavaScript, jQuery/ajax, and Bootstrap. Key responsibilities include:</p>
+                  <h4 className="text-lg font-bold">PHP Developer</h4>
+                  <p className="text-blue-600 dark:text-blue-400">BIZPOTENTIAL • 2021 - NOW</p>
+                  <p className="mt-2 text-gray-600 dark:text-gray-300">Developing and maintaining web applications using PHP (CodeIgniter) OOP, MVC, MySQL, Oracle, SQL Server, JavaScript, jQuery/ajax, and Bootstrap. Key responsibilities include:</p>
                   <ul className="mt-2 list-disc list-inside text-gray-600 dark:text-gray-300 ml-2">
                     <li>Developed ERP modules based on organizational needs </li>
                     <li>Analyzed user requirements and implemented system enhancements based on feedback</li>
